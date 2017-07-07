@@ -26,7 +26,7 @@ class CallbackForm extends FormAbstract
             return false;
         }
         //phone validation
-        if (!preg_match("/^[\+0-9]{10,12}$/", $this->phone)) {
+        if (!preg_match("/^[\+7][0-9]{10,12}$/", $this->phone)) {
             return false;
         }
         return true;
