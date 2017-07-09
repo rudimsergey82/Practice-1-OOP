@@ -13,7 +13,7 @@ class CallbackForm extends FormAbstract
     public $name;
     public $phone;
 
-    public function __construct(string $formType, string $name, int $phone)
+    public function __construct(string $formType, string $name, $phone)
     {
         parent::__construct($formType);
         $this->name = $name;
@@ -26,7 +26,7 @@ class CallbackForm extends FormAbstract
             return false;
         }
         //phone validation
-        if (!preg_match("/^[\+7][0-9]{10,12}$/", $this->phone)) {
+        if (!preg_match("/^[\+7][\d]{10,12}$/", $this->phone)) {
             return false;
         }
         return true;
