@@ -25,8 +25,8 @@ class CallbackForm extends FormAbstract
         if (empty($this->name) || strlen($this->name) > 20 || strlen($this->name) < 3) {
             return false;
         }
-        //phone validation
-        if (!preg_match("/^[\+7][\d]{10,12}$/", $this->phone)) {
+
+        if (empty($this->phone) || strlen($this->phone) < 10 || strlen($this->phone) > 12 || !preg_match("/^[\+][0-9]{10,12}$/", $this->phone)) {
             return false;
         }
         return true;

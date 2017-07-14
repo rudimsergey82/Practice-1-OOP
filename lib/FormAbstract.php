@@ -6,6 +6,7 @@
  * Date: 18.05.17
  * Time: 19:28
  */
+//comint
 abstract class FormAbstract
 {
     public $formType;

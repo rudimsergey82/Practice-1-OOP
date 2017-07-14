@@ -19,13 +19,13 @@ class FeedbackForm extends CallbackForm
 
         $this->email = $email;
     }
-
+// validation email
     public function validate(): bool
     {
         if (!parent:: validate()) {
             return false;
         }
-        if (!preg_match("/^([a-zA-Z0-9])+([\.a-zA-Z0-9_-])*@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-]+)*\.([a-zA-Z]{2,6})$/",
+        if (empty($this->email) || !preg_match("/^([a-zA-Z0-9])+([\.a-zA-Z0-9_-])*@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-]+)*\.([a-zA-Z]{2,6})$/",
             $this->email)
         ) {
             return false;
